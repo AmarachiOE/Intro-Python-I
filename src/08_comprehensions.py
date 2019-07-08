@@ -46,7 +46,7 @@ print(y)
 
 x = input("Enter comma-separated numbers: ").split(',')
 
-# What do you need between the square brackets to make it work?
+# What do you need between the square brackets to make it work? - int
 y = [int(elem) for elem in x if int(elem) % 2 == 0]
 
 # formatting: convert string elements to integer elements
