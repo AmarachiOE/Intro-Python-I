@@ -3,10 +3,10 @@
 
 # YOUR CODE HERE
 # self === coord here
-class LatLon():
-    def __init__(coord, lat, lon):
-        coord.lat = lat
-        coord.lon = lon
+class LatLon:
+    def __init__(self, lat, lon):
+        self.lat = lat
+        self.lon = lon
 
 c1 = LatLon(55, 55)
 print("C1 lat:", c1.lat)
