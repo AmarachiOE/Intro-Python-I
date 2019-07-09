@@ -24,6 +24,7 @@ import calendar
 from datetime import datetime
 
 num_args = len(sys.argv)
+
 if num_args == 1:
     # print calendar for current month in current year (July 2019)
     current_month = datetime.now().month
@@ -46,6 +47,9 @@ elif num_args == 3:
     calendar.TextCalendar().prmonth(year, month)
 else:
     print("Expected format: 14_cal.py month year ")
+
+# if (int(sys.argv[1]) > 12): # like if user enters year before month
+#     print("Expected format: 14_cal.py month year ")
 
 
 # EXTRA NOTES
