@@ -30,11 +30,17 @@ print("C2 lon:", c2.lon)
 
 # YOUR CODE HERE
 class Waypoint(LatLon):
+    """
+    This is a Waypoint class that stores name, lat, and lon
+    """
     def __init__(self, name, lat, lon):
         super().__init__(lat, lon)
         self.name = name
     
-    # increasing readability
+    """
+    Increasing readability:
+    This method will print out a string of the class object
+    """    
     def __str__(self):
         # return 'Waypoint( name = '+self.name+', lat = '+str(self.lat)+', lon = '+str(self.lon)+' )'
         return f'Waypoint: name = "{self.name}", lat = {self.lat}, lon = {self.lon}'
@@ -49,9 +55,11 @@ class Geocache(Waypoint):
         self.difficulty = difficulty
         self.size = size
 
-    # increasing readability
+    """
+    Increasing readability:
+    This method will print out a string of the class object
+    """
     def __str__(self):
-        # return 'Geocache( name = '+self.name+', difficulty = '+str(self.difficulty)+', size = '+str(self.size)+', lat = '+str(self.lat)+', lon = '+str(self.lon)+' )'
         return f'Geocache: name = "{self.name}", {self.difficulty}, size = {self.size}, lat = {self.lat}, lon = {self.lon}'
 
 # Make a new waypoint and print it out: "Catacombs", 41.70505, -121.51521
