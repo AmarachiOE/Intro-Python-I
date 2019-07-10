@@ -8,6 +8,10 @@ class LatLon:
     def __init__(self, lat, lon):
         self.lat = lat
         self.lon = lon
+    @staticmethod # static method belongs to class not just an instance
+    def change_static_var():
+        LatLon.obj_type = "New Type"
+        print(LatLon.obj_type)
 
 # to change static/class variable:
 # LatLon.obj_type = "new type"
