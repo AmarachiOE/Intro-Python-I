@@ -4,6 +4,7 @@
 # YOUR CODE HERE
 # self === coord here
 class LatLon:
+    obj_type = "LatLon" # static variable, shared among all instances of this class
     def __init__(self, lat, lon):
         self.lat = lat
         self.lon = lon
@@ -11,6 +12,7 @@ class LatLon:
 c1 = LatLon(55, 55)
 print("C1 lat:", c1.lat)
 print("C1 lon:", c1.lon)
+print("C1 static variable:", c1.obj_type)
 
 c2 = LatLon(66, 66)
 print("C2 lat:", c2.lat)
