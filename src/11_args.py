@@ -5,6 +5,8 @@
 # the sum. This is what you'd consider to be a regular, normal function.
 
 # YOUR CODE HERE
+def f1(a, b):
+    return a + b
 
 print(f1(1, 2))
 
@@ -13,6 +15,16 @@ print(f1(1, 2))
 
 # YOUR CODE HERE
 
+def f2(*numbers):
+    return sum(numbers)
+
+    # sum = 0
+    # for num in numbers:
+    #     sum += num
+    # return sum
+    
+    
+
 print(f2(1))                    # Should print 1
 print(f2(1, 3))                 # Should print 4
 print(f2(1, 4, -12))            # Should print -7
@@ -20,14 +32,27 @@ print(f2(7, 9, 1, 3, 4, 9, 0))  # Should print 33
 
 a = [7, 6, 5, 4]
 
-# What thing do you have to add to make this work?
-print(f2(a))    # Should print 22
+# What thing do you have to add to make this work?  - *
+print(f2(*a))    # Should print 22
 
 # Write a function f3 that accepts either one or two arguments. If one argument,
 # it returns that value plus 1. If two arguments, it returns the sum of the
 # arguments. Google "python default arguments" for a hint.
 
 # YOUR CODE HERE
+def f3(x, y=1):
+    return x + y
+
+# FIRST THOUGHT
+def f3_alt(*nums, default=1):
+    if len(nums) == 1:
+        return nums[0] + default
+    elif len(nums) == 2:
+        return sum(nums)
+
+        # sum = 0
+        # for num in nums:
+        #     sum += num
 
 print(f3(1, 2))  # Should print 3
 print(f3(8))     # Should print 9
@@ -42,7 +67,10 @@ print(f3(8))     # Should print 9
 # Google "python keyword arguments".
 
 # YOUR CODE HERE
-
+def f4(**kwargs):
+    for key in kwargs:
+        print(f'key: {key}, value: {kwargs[key]}')
+        
 # Should print
 # key: a, value: 12
 # key: b, value: 30
@@ -59,5 +87,5 @@ d = {
     "hp": 3
 }
 
-# What thing do you have to add to make this work?
-f4(d)
+# What thing do you have to add to make this work? - **
+f4(**d)

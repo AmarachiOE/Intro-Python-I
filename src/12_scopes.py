@@ -2,29 +2,33 @@
 # Good reading: https://www.programiz.com/python-programming/global-local-nonlocal-variables
 
 # When you use a variable in a function, it's local in scope to the function.
+# global refers to the variable in the global environment
 x = 12
 
 def changeX():
+    global x
     x = 99
 
 changeX()
 
-# This prints 12. What do we have to modify in changeX() to get it to print 99?
+# This prints 12. What do we have to modify in changeX() to get it to print 99? - add 'global x'
 print(x)
 
 
 # This nested function has a similar problem.
+# nonlocal refers to the variable in the immediate next outer scope
 
 def outer():
     y = 120
 
     def inner():
+        nonlocal y
         y = 999
 
     inner()
 
     # This prints 120. What do we have to change in inner() to get it to print
-    # 999? Google "python nested function scope".
+    # 999? Google "python nested function scope". - add 'nonlocal y'
     print(y)
 
 outer()
